@@ -489,10 +489,13 @@ class _YearPicker<T> extends StatelessWidget {
             ),
           ),
           Flexible(
-            child: GridView.count(
-              physics: datePickerLayoutSettings.scrollPhysics,
-              crossAxisCount: 4,
-              children: labels,
+            child: Container(
+              decoration: datePickerStyles.gridDecoration,
+              child: GridView.count(
+                physics: datePickerLayoutSettings.scrollPhysics,
+                crossAxisCount: 4,
+                children: labels,
+              ),
             ),
           ),
         ],

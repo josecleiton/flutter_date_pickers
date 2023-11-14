@@ -68,6 +68,9 @@ class DatePickerStyles {
   /// Can be null. In this case value from current locale will be used.
   final int? firstDayOfeWeekIndex;
 
+  /// [gridDecoration] decorate generated grid
+  final BoxDecoration? gridDecoration;
+
   /// Styles for date picker.
   DatePickerStyles(
       {this.displayedPeriodTitle,
@@ -81,7 +84,8 @@ class DatePickerStyles {
       this.dayHeaderTitleBuilder,
       this.firstDayOfeWeekIndex,
       this.prevIcon = const Icon(Icons.chevron_left),
-      this.nextIcon = const Icon(Icons.chevron_right)})
+      this.nextIcon = const Icon(Icons.chevron_right),
+      this.gridDecoration})
       : assert(!(dayHeaderStyle != null && dayHeaderStyleBuilder != null),
             "Should be only one from: dayHeaderStyleBuilder, dayHeaderStyle."),
         assert(
@@ -300,6 +304,7 @@ class DatePickerRangeStyles extends DatePickerStyles {
     Widget nextIcon = const Icon(Icons.chevron_right),
     Widget prevIcon = const Icon(Icons.chevron_left),
     int? firstDayOfWeekIndex,
+    BoxDecoration? gridDecoration,
     this.selectedPeriodLastDecoration,
     this.selectedPeriodMiddleDecoration,
     this.selectedPeriodStartDecoration,
@@ -318,7 +323,8 @@ class DatePickerRangeStyles extends DatePickerStyles {
             dayHeaderTitleBuilder: dayHeaderTitleBuilder,
             nextIcon: nextIcon,
             prevIcon: prevIcon,
-            firstDayOfeWeekIndex: firstDayOfWeekIndex);
+            firstDayOfeWeekIndex: firstDayOfWeekIndex,
+            gridDecoration: gridDecoration);
 
   @override
   bool operator ==(Object other) {

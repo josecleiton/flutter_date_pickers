@@ -81,8 +81,9 @@ class DayBasedPicker<T> extends StatelessWidget with CommonDatePickerFunctions {
     labels.addAll(monthDays);
     labels.addAll(daysAfterMonthEnd);
 
-    return Padding(
+    return Container(
       padding: datePickerLayoutSettings.contentPadding,
+      decoration: datePickerStyles.gridDecoration,
       child: Column(
         children: <Widget>[
           Flexible(
